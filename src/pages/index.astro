@@ -97,12 +97,20 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			allPostsByDate.length > 0 && (
 				<Section title='Posts'>
 					<ul class='flex flex-col gap-y-2'>
-						{allPostsByDate.map((p) => (
-							<li class='flex flex-col gap-x-2 sm:flex-row'>
-								<PostPreview post={p} />
-							</li>
-						))}
+						<PostPreview post={allPostsByDate[0]} />
 					</ul>
+					{allPostsByDate.length > 1 && (
+						<details class='mt-2'>
+							<summary class='cursor-pointer select-none'>Show previous posts</summary>
+							<ul class='mt-2 flex flex-col gap-y-2'>
+								{allPostsByDate.slice(1).map((p) => (
+									<li class='flex flex-col gap-x-2 sm:flex-row'>
+										<PostPreview post={p} />
+									</li>
+								))}
+							</ul>
+						</details>
+					)}
 				</Section>
 			)
 		}
