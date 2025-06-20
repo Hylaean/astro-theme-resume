@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/BaseLayout.astro'
 import Section from '../components/Section.astro'
 import Card from '../components/Card.astro'
+import ExperienceCard from '../components/ExperienceCard.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
@@ -116,223 +117,209 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		}
 
 		<Section title='Experience'>
-                        <Card
-                                heading='Head of Software'
-                                subheading='Yverdon-les-Bains, Switzerland'
-                                date='Sept 2023 - Present'
+			<ExperienceCard
+				heading='Head of Software'
+				subheading='Yverdon-les-Bains, Switzerland'
+				date='Sept 2023 - Present'
 				imagePath='/src/assets/logos/swiss-airtainer.png'
 				altText='Swiss Airtainer logo'
 				imageClass='w-12 h-auto md:-left-16'
-                                href='https://example.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Moved the full software stack from PoC to production status.</li>
-					<li>Rewrite In-Flight-Detector - Achieved 100% sensitivty.</li>
-					<li>Oversee Roadmap.</li>
-					<li>Incorporate AI through MCP and agents company wide.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Architect at Inexto SA'
-                                subheading='Lausanne, Switzerland'
-                                date='Jan 2019 - Aug 2023'
-                                imagePath='/src/assets/logos/inexto.png'
-                                altText='Inexto logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://inexto.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Rearchitected a monolith into .NET5 microservices on Kubernetes.</li>
-					<li>Delivered major performance and reliability gains.</li>
-					<li>Managed multi-country data regulations and real-time analytics.</li>
-					<li>Adopted DDD and DevSecOps practices company wide.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Consultant at Wide Agency'
-                                subheading='Geneva, Switzerland'
-                                date='Sep 2015 - Jan 2021'
-                                imagePath='/src/assets/logos/wide.png'
-                                altText='Wide Agency logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://wideagency.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Advised clients such as Tag Heuer and Geneva Airport.</li>
-					<li>Led the DevOps practice and performed security audits.</li>
-					<li>Built blockchain and machine learning prototypes.</li>
-					<li>Defined architecture for Geneva Airport's ecommerce overhaul.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Technical Lead at Medtronic'
-                                subheading='Vaud, Switzerland'
-                                date='Sep 2015 - Oct 2016'
-                                imagePath='/src/assets/logos/medtronic.png'
-                                altText='Medtronic logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://www.medtronic.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Built a multivendor B2B/B2C ecommerce platform.</li>
-					<li>Introduced microservices and collaborative development.</li>
-					<li>Established REST standards and Git workflows.</li>
-					<li>Drove tooling selection and backend integration.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Lead Architect at Availpro'
-                                subheading='Paris, France'
-                                date='Sep 2012 - Nov 2014'
-                                imagePath='/src/assets/logos/dedge.svg'
-                                altText='Company logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://www.availpro.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Managed SaaS booking engine for over 3000 hotels.</li>
-					<li>Migrated services to Azure and improved diagnostics.</li>
-					<li>Designed scraping and web mining frameworks.</li>
-					<li>Optimised service bus architecture and performance.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Consultant at Hylaean Industries'
-                                subheading='Paris, France'
-                                date='Jan 2011 - Present'
-                                imagePath='/src/assets/logos/generic-firm.png'
-                                altText='Company logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://hylaean.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Architecture consulting and performance optimization.</li>
-					<li>Projects for EverAntiq, Swail, Yomii and Curioos.</li>
-					<li>Implemented Azure-based CQRS pipelines.</li>
-					<li>Mentored teams and wrote technical roadmaps.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Software Architect at FullSix'
-                                subheading='Paris, France'
-                                date='Oct 2008 - May 2010'
-                                imagePath='/src/assets/logos/fullsix.png'
-                                altText='FullSix logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://betcfullsix.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Led a 10-person .NET team and set methodologies.</li>
-					<li>Redesigned reusable components for major clients.</li>
-					<li>Evaluated NoSQL, Azure and Vertica technologies.</li>
-					<li>Managed clickstream analytics with 1B+ yearly events.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Consultant at AXA Investment Managers'
-                                subheading='Paris, France'
-                                date='Sep 2008 - Oct 2009'
-                                imagePath='/src/assets/logos/axa-im.png'
-                                altText='AXA Investment Managers logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://www.axa-im.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Designed grid platform for risk management.</li>
-					<li>Provided C#/.NET expertise across teams.</li>
-					<li>Maintained and evolved multiple applications.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Project Manager at fnac.com'
-                                subheading='Paris, France'
-                                date='May 2006 - Sep 2008'
-                                imagePath='/src/assets/logos/fnac.png'
-                                altText='fnac.com logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://www.fnac.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Delivered product categorization features.</li>
-					<li>Built automated allocation with visual rules.</li>
-					<li>Developed custom caching and micro‑ORM.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Software Architect at GFI Informatique'
-                                subheading='Aix-en-Provence, France'
-                                date='Dec 2004 - Mar 2006'
-                                imagePath='/src/assets/logos/gfi.png'
-                                altText='GFI logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://www.gfi.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Developed operational dosimetry solutions.</li>
-					<li>Handled high performance requirements.</li>
-					<li>Mentored programmers new to .NET.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Engineer & Architect at Thales Telematics'
-                                subheading='Cape Town, South Africa'
-                                date='Sep 2003 - Nov 2004'
-                                imagePath='/src/assets/logos/thales.png'
-                                altText='Thales logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://www.thalesgroup.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Designed fleet management software with embedded devices.</li>
-					<li>Introduced TDD and Agile practices.</li>
-					<li>Built distributed applications in C++ and .NET.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='R&D Developer at Netquartz'
-                                subheading='Paris area, France'
-                                date='Apr 2001 - Sep 2003'
-                                imagePath='/src/assets/logos/generic-firm.png'
-                                altText='Company logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://www.netquartz.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Developed cross‑platform DRM technology.</li>
-					<li>Created distributed component framework.</li>
-					<li>Managed a three‑person team.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Developer at Salomon'
-                                subheading='Annecy, France & Treviso, Italy'
-                                date='Sep 1998 - Dec 2000'
-                                imagePath='/src/assets/logos/salomon.png'
-                                altText='Salomon logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://www.salomon.com'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Automated fax routing and Euro conversion.</li>
-					<li>Synchronized data across enterprise systems.</li>
-					<li>Integrated production machines with ERP.</li>
-				</ul>
-			</Card>
-                        <Card
-                                heading='Trainee at CNES'
-                                subheading='Kourou, French Guiana'
-                                date='Jun 1997 - Oct 1997'
-                                imagePath='/src/assets/logos/cnes.png'
-                                altText='CNES logo'
-                                imageClass='h-12 w-auto md:-left-16'
-                                href='https://cnes.fr'
-                        >
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Built intranet templates in HTML and JavaScript.</li>
-					<li>Created contact forms and support tickets in C.</li>
-					<li>Set up intranet webcasting for Ariane&nbsp;5 rollout.</li>
-				</ul>
-			</Card>
+				href='https://example.com'
+				points={[
+					'Moved the full software stack from PoC to production status.',
+					'Rewrite In-Flight-Detector - Achieved 100% sensitivty.',
+					'Oversee Roadmap.',
+					'Incorporate AI through MCP and agents company wide.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Architect at Inexto SA'
+				subheading='Lausanne, Switzerland'
+				date='Jan 2019 - Aug 2023'
+				imagePath='/src/assets/logos/inexto.png'
+				altText='Inexto logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://inexto.com'
+				points={[
+					'Rearchitected a monolith into .NET5 microservices on Kubernetes.',
+					'Delivered major performance and reliability gains.',
+					'Managed multi-country data regulations and real-time analytics.',
+					'Adopted DDD and DevSecOps practices company wide.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Consultant at Wide Agency'
+				subheading='Geneva, Switzerland'
+				date='Sep 2015 - Jan 2021'
+				imagePath='/src/assets/logos/wide.png'
+				altText='Wide Agency logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://wideagency.com'
+				points={[
+					'Advised clients such as Tag Heuer and Geneva Airport.',
+					'Led the DevOps practice and performed security audits.',
+					'Built blockchain and machine learning prototypes.',
+					"Defined architecture for Geneva Airport's ecommerce overhaul."
+				]}
+			/>
+			<ExperienceCard
+				heading='Technical Lead at Medtronic'
+				subheading='Vaud, Switzerland'
+				date='Sep 2015 - Oct 2016'
+				imagePath='/src/assets/logos/medtronic.png'
+				altText='Medtronic logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://www.medtronic.com'
+				points={[
+					'Built a multivendor B2B/B2C ecommerce platform.',
+					'Introduced microservices and collaborative development.',
+					'Established REST standards and Git workflows.',
+					'Drove tooling selection and backend integration.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Lead Architect at Availpro'
+				subheading='Paris, France'
+				date='Sep 2012 - Nov 2014'
+				imagePath='/src/assets/logos/dedge.svg'
+				altText='Company logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://www.availpro.com'
+				points={[
+					'Managed SaaS booking engine for over 3000 hotels.',
+					'Migrated services to Azure and improved diagnostics.',
+					'Designed scraping and web mining frameworks.',
+					'Optimised service bus architecture and performance.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Consultant at Hylaean Industries'
+				subheading='Paris, France'
+				date='Jan 2011 - Present'
+				imagePath='/src/assets/logos/generic-firm.png'
+				altText='Company logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://hylaean.com'
+				points={[
+					'Architecture consulting and performance optimization.',
+					'Projects for EverAntiq, Swail, Yomii and Curioos.',
+					'Implemented Azure-based CQRS pipelines.',
+					'Mentored teams and wrote technical roadmaps.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Software Architect at FullSix'
+				subheading='Paris, France'
+				date='Oct 2008 - May 2010'
+				imagePath='/src/assets/logos/fullsix.png'
+				altText='FullSix logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://betcfullsix.com'
+				points={[
+					'Led a 10-person .NET team and set methodologies.',
+					'Redesigned reusable components for major clients.',
+					'Evaluated NoSQL, Azure and Vertica technologies.',
+					'Managed clickstream analytics with 1B+ yearly events.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Consultant at AXA Investment Managers'
+				subheading='Paris, France'
+				date='Sep 2008 - Oct 2009'
+				imagePath='/src/assets/logos/axa-im.png'
+				altText='AXA Investment Managers logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://www.axa-im.com'
+				points={[
+					'Designed grid platform for risk management.',
+					'Provided C#/.NET expertise across teams.',
+					'Maintained and evolved multiple applications.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Project Manager at fnac.com'
+				subheading='Paris, France'
+				date='May 2006 - Sep 2008'
+				imagePath='/src/assets/logos/fnac.png'
+				altText='fnac.com logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://www.fnac.com'
+				points={[
+					'Delivered product categorization features.',
+					'Built automated allocation with visual rules.',
+					'Developed custom caching and micro‑ORM.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Software Architect at GFI Informatique'
+				subheading='Aix-en-Provence, France'
+				date='Dec 2004 - Mar 2006'
+				imagePath='/src/assets/logos/gfi.png'
+				altText='GFI logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://www.gfi.com'
+				points={[
+					'Developed operational dosimetry solutions.',
+					'Handled high performance requirements.',
+					'Mentored programmers new to .NET.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Engineer & Architect at Thales Telematics'
+				subheading='Cape Town, South Africa'
+				date='Sep 2003 - Nov 2004'
+				imagePath='/src/assets/logos/thales.png'
+				altText='Thales logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://www.thalesgroup.com'
+				points={[
+					'Designed fleet management software with embedded devices.',
+					'Introduced TDD and Agile practices.',
+					'Built distributed applications in C++ and .NET.'
+				]}
+			/>
+			<ExperienceCard
+				heading='R&D Developer at Netquartz'
+				subheading='Paris area, France'
+				date='Apr 2001 - Sep 2003'
+				imagePath='/src/assets/logos/generic-firm.png'
+				altText='Company logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://www.netquartz.com'
+				points={[
+					'Developed cross‑platform DRM technology.',
+					'Created distributed component framework.',
+					'Managed a three‑person team.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Developer at Salomon'
+				subheading='Annecy, France & Treviso, Italy'
+				date='Sep 1998 - Dec 2000'
+				imagePath='/src/assets/logos/salomon.png'
+				altText='Salomon logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://www.salomon.com'
+				points={[
+					'Automated fax routing and Euro conversion.',
+					'Synchronized data across enterprise systems.',
+					'Integrated production machines with ERP.'
+				]}
+			/>
+			<ExperienceCard
+				heading='Trainee at CNES'
+				subheading='Kourou, French Guiana'
+				date='Jun 1997 - Oct 1997'
+				imagePath='/src/assets/logos/cnes.png'
+				altText='CNES logo'
+				imageClass='h-12 w-auto md:-left-16'
+				href='https://cnes.fr'
+				points={[
+					'Built intranet templates in HTML and JavaScript.',
+					'Created contact forms and support tickets in C.',
+					'Set up intranet webcasting for Ariane\u00a05 rollout.'
+				]}
+			/>
 		</Section>
 
 		<Section title='Education'>

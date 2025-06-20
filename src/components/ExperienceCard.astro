@@ -1,0 +1,41 @@
+---
+import Card from './Card.astro'
+
+interface Props {
+	heading: string
+	subheading: string
+	date: string
+	imagePath: string
+	altText: string
+	imageClass?: string
+	href?: string
+	points: string[]
+}
+
+const {
+	heading,
+	subheading,
+	date,
+	imagePath,
+	altText,
+	imageClass,
+	href,
+	points,
+	class: className
+} = Astro.props as Props & { class?: string }
+---
+
+<Card
+	class={className}
+	heading={heading}
+	subheading={subheading}
+	date={date}
+	imagePath={imagePath}
+	altText={altText}
+	imageClass={imageClass}
+	href={href}
+>
+	<ul class='ml-4 list-disc text-muted-foreground'>
+		{points.map((pt) => <li>{pt}</li>)}
+	</ul>
+</Card>
