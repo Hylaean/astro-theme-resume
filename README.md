@@ -14,6 +14,7 @@
 - [Automatic RSS feed](https://docs.astro.build/en/guides/rss)
 - Auto-generated [sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 - [Expressive Code](https://expressive-code.com/) source code and syntax highlighter
+- Dynamic Einstein hat background that adapts to light and dark theme
 
 ## Credits
 
@@ -75,5 +76,10 @@ To add images in blog articles, insert a folder in the `src/content/` directory,
 ## Theming
 
 To change the theme colours of the site, edit the `src/styles/app.css` file.
+
+The site background is generated from the Einstein hat monotile at runtime.
+Colors follow the current theme, so switching between light and dark mode will
+redraw the pattern accordingly. You can modify the drawing logic in
+`public/hatBackground.js` to customise the colours or tile layout.
 
 To change the fonts of the site, add your font files into `/public`, add it as a `@font-face` in the `src/styles/app.css` file, as a `fontFamily` in the `tailwind.config.js` file, and apply the new font class to the `body` tag in the `src/layouts/BaseLayout.astro` file.
